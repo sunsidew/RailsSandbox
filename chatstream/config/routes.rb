@@ -1,4 +1,5 @@
 Chatstream::Application.routes.draw do
+  get "stream/stream"
   root "msg#index"
   post "/msg/send" => "msg#send"
   # The priority is based upon order of creation: first created -> highest priority.
