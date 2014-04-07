@@ -1,7 +1,7 @@
 Chatstream::Application.routes.draw do
-  get "stream/stream"
   root "msg#index"
   post "/msg/send" => "msg#send"
+  get "/stream" => "streams#stream"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
