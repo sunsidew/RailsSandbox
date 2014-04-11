@@ -15,10 +15,12 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).ready(funtion(){
+$(document).ready(function(){
 	var source = new EventSource('/stream');
 	source.addEventListener('new_message', function(e) {
 		var message = JSON.parse(e.data);
-		$("#chatbox").append($('<p>').text(message.name + ":" + message.content));
+		$("#screen").append($('<p>').text("check :" + message.content));
+		console.log("append");
 	});
+	console.log("ready");
 });

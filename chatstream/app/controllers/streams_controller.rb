@@ -1,9 +1,9 @@
-class StreamController < ApplicationController
+class StreamsController < ApplicationController
   include ActionController::Live
 
   def stream
     response.headers['Content-Type'] = 'text/event-stream'
-    
+
     redis = Redis.new
     redis.subscribe('new_message') do |on|
       on.message do |event, data|
@@ -13,7 +13,7 @@ class StreamController < ApplicationController
       end
     end
 
-    render nothing: true
+    render nothing: true 
   rescue IOError
 
   ensure

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class StreamControllerTest < ActionController::TestCase
+class StreamsControllerTest < ActionController::TestCase
   test "should get stream" do
     get :stream
     assert_response :success
